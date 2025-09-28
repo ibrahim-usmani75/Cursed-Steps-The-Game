@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7fkglccl1kua"]
+
+[ext_resource type="Texture2D" uid="uid://b0p1yd1npxhda" path="res://assets/Key Items 16x16/Key Items 16x16/02.png" id="1_0rmhr"]
+[ext_resource type="Script" uid="uid://dshbumhwf12ci" path="res://scripts/door_key.gd" id="1_jw4ut"]
+[ext_resource type="Script" uid="uid://cuulrsg3dcyjm" path="res://scripts/key.gd" id="2_si2ci"]
+[ext_resource type="AudioStream" uid="uid://dk3403h6t2xmr" path="res://assets/coin.wav" id="4_3hk56"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3hk56"]
+radius = 4.0
+height = 14.0
+
+[sub_resource type="Animation" id="Animation_uaa2a"]
+resource_name = "sound"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d1jyf"]
+_data = {
+&"sound": SubResource("Animation_uaa2a")
+}
+
+[node name="Door Key" type="Area2D"]
+script = ExtResource("1_jw4ut")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0rmhr")
+script = ExtResource("2_si2ci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_3hk56")
+
+[node name="pick_key_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_3hk56")
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_d1jyf")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

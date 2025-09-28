@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cypvedn4wbmjs"
+path="res://.godot/imported/LOCK TURNING CLICK SOUND EFFECT - FREE.mp3-0acfc7a5e82cd3cdf4c346c33c492dab.mp3str"
+
+[deps]
+
+source_file="res://assets/LOCK TURNING CLICK SOUND EFFECT - FREE.mp3"
+dest_files=["res://.godot/imported/LOCK TURNING CLICK SOUND EFFECT - FREE.mp3-0acfc7a5e82cd3cdf4c346c33c492dab.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://0lckqov024g0"]
+
+[ext_resource type="Script" uid="uid://bw3vw1v08hnhw" path="res://scripts/main_menu.gd" id="1_8ln24"]
+[ext_resource type="FontFile" uid="uid://3nufflq7pl36" path="res://assets/fonts/Kenney Future.ttf" id="1_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://co8wsjucbg10h" path="res://assets/background_main_menu.jpg" id="2_wu84c"]
+[ext_resource type="Texture2D" uid="uid://bsf0inswj8870" path="res://assets/Buttons/Play.png" id="5_rtw2f"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wu84c"]
+load_path = "res://.godot/imported/panel-border-005.png-80c5c78197d41fd2365724b1e2a798e4.ctex"
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -482.0
+offset_top = -257.0
+offset_right = 525.0
+offset_bottom = 184.0
+script = ExtResource("1_8ln24")
+
+[node name="Label" type="Label" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = 315.0
+offset_top = 145.0
+offset_right = 675.0
+offset_bottom = 189.0
+theme_override_fonts/font = ExtResource("1_bqqt6")
+theme_override_font_sizes/font_size = 38
+text = "CURSED STEPS"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visibility_layer = 2
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = -117.0
+offset_top = -316.0
+offset_right = 4947.0
+offset_bottom = 2824.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_wu84c")
+stretch_mode = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(490.5, 172)
+scale = Vector2(9.02083, 2.91667)
+texture = SubResource("CompressedTexture2D_wu84c")
+
+[node name="PlayButton\'" type="Button" parent="."]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 262.0
+offset_right = 497.0
+offset_bottom = 299.0
+scale = Vector2(2, 2)
+text = "PLAY"
+icon = ExtResource("5_rtw2f")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(494, 218)
+scale = Vector2(2, 2)
+zoom = Vector2(1.5, 1.5)
+
+[connection signal="pressed" from="PlayButton\'" to="." method="_on_play_button_pressed"]
